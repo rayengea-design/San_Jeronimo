@@ -1,0 +1,76 @@
+.feature-card {
+    display: flex;
+    gap: 1.25rem;
+    background: var(--white);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(46, 149, 182, 0.1), rgba(46, 149, 182, 0.05));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-card h3 {
+    color: var(--dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    min-width: 50px;
+    text-align: center;
+}
+
+.step p {
+    color: var(--dark-gray);
+    font-size: 1rem;
+}

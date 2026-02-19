@@ -1,0 +1,191 @@
+.empresa-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.empresa-text h2 {
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.empresa-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.empresa-text p {
+    color: var(--gray);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.empresa-text strong {
+    color: var(--dark);
+}
+
+.empresa-image-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.empresa-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.6s ease;
+}
+
+.empresa-img:hover {
+    transform: scale(1.03);
+}
+
+.empresa-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--light-gray);
+    border-radius: var(--radius);
+}
+
+.stat-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 0.25rem;
+}
+
+/* Feature cards reused from RecuperacionPuntos */
+.feature-card {
+    display: flex;
+    gap: 1.25rem;
+    background: var(--white);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(46, 149, 182, 0.1), rgba(46, 149, 182, 0.05));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-card h3 {
+    color: var(--dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+}
+
+/* Location */
+.empresa-ubicacion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.ubicacion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ubicacion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.ubicacion-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(46, 149, 182, 0.1), rgba(46, 149, 182, 0.05));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.ubicacion-item strong {
+    display: block;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.ubicacion-item p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.ubicacion-item a {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.ubicacion-item a:hover {
+    color: var(--primary-hover);
+}
+
+.ubicacion-mapa {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+@media (min-width: 768px) {
+    .empresa-ubicacion {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .empresa-intro {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
