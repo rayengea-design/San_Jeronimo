@@ -18,21 +18,23 @@
   margin: 0 auto; padding: 0 2rem;
   display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 4rem;
 }
-.home-hero__content { max-width: 640px; }
+.home-hero__content { width: 100%; }
 .home-hero__logo { width: 100%; max-width: 500px; height: auto; margin-bottom: 2.5rem; opacity: 0.95; }
 .home-hero__title {
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 800;
-  line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem); font-weight: 800;
+  line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem;
+  max-width: 680px;
 }
 .home-hero__title span { display: block; color: #64c8e8; }
 .home-hero__subtitle {
   font-size: 1.1rem; line-height: 1.7; opacity: 0.7;
   margin-bottom: 2.5rem; max-width: 480px;
 }
-.home-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.home-hero__actions { display: flex; gap: 1rem; align-items: center; }
 .home-hero__btn {
   padding: 0.9rem 2rem; border-radius: 10px; font-weight: 700;
   font-size: 0.95rem; transition: all 0.25s ease; cursor: pointer; border: none;
+  white-space: nowrap;
 }
 .home-hero__btn--primary { background: var(--primary); color: white; }
 .home-hero__btn--primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,149,182,0.3); }
@@ -41,7 +43,6 @@
 
 .hero-certifications {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
 }
@@ -55,6 +56,7 @@
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   cursor: default;
+  white-space: nowrap;
 }
 .iso-badge:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -282,5 +284,6 @@
   .empresa-grid, .testimonials-scroll { grid-template-columns: 1fr; }
   .puntos-banner__list { grid-template-columns: 1fr; }
   .home-cta__actions { flex-direction: column; align-items: center; }
+  .home-hero__actions { flex-wrap: wrap; }
   .centros-mosaic { grid-template-columns: 1fr; }
 }

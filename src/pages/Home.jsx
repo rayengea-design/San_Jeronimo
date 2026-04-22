@@ -41,7 +41,7 @@ const permisosShowcase = [
     {
         tag: 'Transporte',
         title: 'Camión y Autobús',
-        desc: 'C, C+E, D — con camión automático',
+        desc: 'C, C+E, D — con camiónes equipados',
         image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80',
         link: '/permisos#pesados',
     },
@@ -63,7 +63,7 @@ const permisosShowcase = [
 
 const fleet = [
     { name: 'Turismo de Prácticas', type: 'Última generación', desc: 'Equipados con ADAS y doble mando digital.', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=400&q=80' },
-    { name: 'Camión Automático', type: 'Exclusivo en la zona', desc: 'Aprendizaje más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=400&q=80' },
+    { name: 'Camiónes Equipados', type: 'Exclusivo en la zona', desc: 'Aprendizaje más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=400&q=80' },
     { name: 'Motos Adaptadas', type: 'Para cada examen', desc: 'Flota específica para AM, A1, A2 y A.', img: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=400&q=80' },
 ];
 
@@ -82,7 +82,7 @@ const empresaCards = [
 
 const testimonials = [
     { name: 'María López', permit: 'B', text: 'Aprobé a la primera gracias a la paciencia de los profesores y los intensivos de teórica. Trato cercano y profesional.' },
-    { name: 'Carlos Ruiz', permit: 'C+E', text: 'El camión automático marca la diferencia. Aprender con tecnología moderna te prepara de verdad para el mundo laboral.' },
+    { name: 'Carlos Ruiz', permit: 'C+E', text: 'Los camiones equipados marcan la diferencia. Aprender con tecnología moderna te prepara de verdad para el mundo laboral.' },
     { name: 'Ana Martínez', permit: 'A2', text: 'Tenía mucho respeto a la moto, pero los instructores me transmitieron una confianza enorme. Lo recomiendo al 100%.' },
 ];
 
@@ -93,10 +93,10 @@ const CheckIcon = () => (
 );
 
 const cardIcons = [
-    <svg key="0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4"/><path d="M2 14v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4"/><line x1="6" y1="12" x2="18" y2="12"/></svg>,
-    <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>,
-    <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
-    <svg key="3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
+    <svg key="0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4" /><path d="M2 14v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4" /><line x1="6" y1="12" x2="18" y2="12" /></svg>,
+    <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></svg>,
+    <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>,
+    <svg key="3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>,
 ];
 
 export default function Home() {
@@ -120,11 +120,11 @@ export default function Home() {
                         <AnimatedSection animation="fade-up">
                             <img src={logo} alt="Autoescuela San Jerónimo" className="home-hero__logo" />
                             <h1 className="home-hero__title">
-                                Tu carnet de conducir,
-                                <span>con quien mejor te prepara.</span>
+                                40 años formando conductores,
+                                <span>tu aprobado es nuestro éxito.</span>
                             </h1>
                             <p className="home-hero__subtitle">
-                                Más de 40 años formando conductores en Almería. 
+                                Más de 40 años formando conductores en Almería.
                                 11 centros, todos los permisos y la mejor tasa de aprobados de la comarca.
                             </p>
                             <div className="home-hero__actions">
@@ -175,7 +175,7 @@ export default function Home() {
                         <div className="home-section-header">
                             <span className="home-section-label">Formación completa</span>
                             <h2>Todos los permisos de conducir<br />en un solo lugar</h2>
-                            <p>Desde el ciclomotor hasta el tráiler. Vehículos nuevos, camión automático y profesores con décadas de experiencia.</p>
+                            <p>Desde el ciclomotor hasta el tráiler. Vehículos nuevos, camiónes equipados y profesores con décadas de experiencia.</p>
                         </div>
                     </AnimatedSection>
                     <div className="permisos-showcase">
@@ -240,7 +240,7 @@ export default function Home() {
                                 <span className="home-section-label" style={{ color: '#64c8e8' }}>División profesional</span>
                                 <h2>Referentes en formación<br />logística y transporte</h2>
                                 <p style={{ opacity: 0.7, lineHeight: 1.7, marginBottom: 0 }}>
-                                    Única autoescuela de la zona con flota propia de última generación 
+                                    Única autoescuela de la zona con flota propia de última generación
                                     y centro autorizado para CAP, ADR y todos los permisos profesionales.
                                 </p>
                                 <div className="profesional-features">
