@@ -5,8 +5,8 @@ import './Legal.css';
 export default function AvisoLegal() {
     return (
         <div className="legal-page">
-            <SEO
-                title="Aviso Legal - Autoescuela San Jerónimo"
+            <SEO 
+                title="Aviso Legal - Autoescuela San Jerónimo" 
                 description="Términos y condiciones legales de Autoescuela San Jerónimo. Información sobre el titular y normativa aplicable."
             />
 
