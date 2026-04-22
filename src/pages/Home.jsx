@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { generateLocalBusinessSchema } from '../utils/seoSchemas';
 import TestimonialCard from '../components/TestimonialCard';
 import AnimatedSection from '../components/AnimatedSection';
 import logo from '../assets/logo_blanco.png';
@@ -105,6 +106,8 @@ export default function Home() {
             <SEO
                 title="Líderes en Formación Vial en Almería"
                 description="Autoescuela San Jerónimo: 40 años de excelencia. 11 centros en Almería, formación profesional CAP/ADR y permisos de conducir de todo tipo."
+                url="https://autoescuelasanjeronimo.es/"
+                schema={generateLocalBusinessSchema()}
             />
 
             {/* ═══ HERO ═══ */}

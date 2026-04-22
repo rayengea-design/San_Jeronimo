@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { generateCourseSchema } from '../utils/seoSchemas';
 import AnimatedSection from '../components/AnimatedSection';
 import './Profesionales.css';
 
@@ -63,6 +64,12 @@ export default function Profesionales() {
             <SEO
                 title="CAP y ADR Especialistas - Centro de Formación Profesional"
                 description="Expertos en formación CAP y ADR en Huércal-Overa. Consulta próximas fechas y gestiona la formación bonificada para tu empresa."
+                url="https://autoescuelasanjeronimo.es/profesionales"
+                schema={generateCourseSchema({
+                    name: 'Cursos CAP y ADR',
+                    description: 'Formación profesional CAP inicial y continuo, y mercancías peligrosas ADR.',
+                    url: 'https://autoescuelasanjeronimo.es/profesionales'
+                })}
             />
 
             {/* HERO */}

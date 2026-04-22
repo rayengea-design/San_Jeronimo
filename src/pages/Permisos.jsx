@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { generateCourseSchema } from '../utils/seoSchemas';
 import Accordion from '../components/Accordion';
 import AnimatedSection from '../components/AnimatedSection';
 import './Permisos.css';
@@ -193,6 +194,12 @@ export default function Permisos() {
             <SEO
                 title="Permisos de conducir - Showroom Profesional"
                 description="Consigue tu carnet de coche, moto, camión o autobús con los mejores profesionales. Vehículos modernos y camión equipadoo único en la zona."
+                url="https://autoescuelasanjeronimo.es/permisos"
+                schema={generateCourseSchema({
+                    name: 'Permisos de Conducir',
+                    description: 'Cursos para obtener permisos de conducir B, A2, C, D, etc.',
+                    url: 'https://autoescuelasanjeronimo.es/permisos'
+                })}
             />
 
             {/* HERO */}

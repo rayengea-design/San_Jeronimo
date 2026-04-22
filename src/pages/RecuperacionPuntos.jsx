@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { generateCourseSchema } from '../utils/seoSchemas';
 import AnimatedSection from '../components/AnimatedSection';
 import Accordion from '../components/Accordion';
 import logo from '../assets/logo_blanco.png';
@@ -78,6 +79,12 @@ export default function RecuperacionPuntos() {
             <SEO
                 title="Recuperación de Puntos"
                 description="Somos Centro Autorizado para cursos de recuperación de puntos en Huércal-Overa. Recuperación parcial y total (pérdida de vigencia). ¡Vuelve a conducir!"
+                url="https://autoescuelasanjeronimo.es/recuperacion-puntos"
+                schema={generateCourseSchema({
+                    name: 'Cursos de Recuperación de Puntos',
+                    description: 'Cursos de recuperación parcial y total de puntos del permiso de conducir.',
+                    url: 'https://autoescuelasanjeronimo.es/recuperacion-puntos'
+                })}
             />
 
             {/* HERO */}

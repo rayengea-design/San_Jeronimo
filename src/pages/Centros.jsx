@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SEO from '../components/SEO';
+import { generateLocalBusinessSchema } from '../utils/seoSchemas';
 import AnimatedSection from '../components/AnimatedSection';
 import CentrosMap from '../components/MapContainer';
 import LocationSearch from '../components/LocationSearch';
@@ -52,7 +53,12 @@ export default function Centros() {
 
     return (
         <div className="centros-page">
-            <SEO title="Nuestros Centros — Autoescuela San Jerónimo" description="11 centros en Almería y Murcia. Encuentra tu autoescuela más cercana." />
+            <SEO 
+                title="Nuestros Centros — Autoescuela San Jerónimo" 
+                description="11 centros en Almería y Murcia. Encuentra tu autoescuela más cercana."
+                url="https://autoescuelasanjeronimo.es/centros"
+                schema={generateLocalBusinessSchema()}
+            />
 
             {/* HERO COMPACTO */}
             <section className="centros-hero-compact">
