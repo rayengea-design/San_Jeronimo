@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     Sitemap({
       hostname: 'https://autoescuelasanjeronimo.es',
+      readable: true,
       dynamicRoutes: [
         '/',
         '/permisos',
