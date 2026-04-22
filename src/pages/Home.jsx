@@ -130,15 +130,15 @@ export default function Home() {
                             <div className="home-hero__actions">
                                 <Link to="/permisos" className="home-hero__btn home-hero__btn--primary">Ver permisos disponibles</Link>
                                 <Link to="/centros" className="home-hero__btn home-hero__btn--outline">Encontrar mi centro</Link>
-                            </div>
-                            <div className="hero-certifications">
-                                <div className="iso-badge">
-                                    <span className="iso-text">ISO 9001</span>
-                                    <span className="iso-desc">Calidad</span>
-                                </div>
-                                <div className="iso-badge">
-                                    <span className="iso-text">ISO 14001</span>
-                                    <span className="iso-desc">Ambiental</span>
+                                <div className="hero-certifications">
+                                    <div className="iso-badge">
+                                        <span className="iso-text">ISO 9001</span>
+                                        <span className="iso-desc">Calidad</span>
+                                    </div>
+                                    <div className="iso-badge">
+                                        <span className="iso-text">ISO 14001</span>
+                                        <span className="iso-desc">Ambiental</span>
+                                    </div>
                                 </div>
                             </div>
                         </AnimatedSection>

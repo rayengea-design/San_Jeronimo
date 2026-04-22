@@ -29,7 +29,7 @@
   font-size: 1.1rem; line-height: 1.7; opacity: 0.7;
   margin-bottom: 2.5rem; max-width: 480px;
 }
-.home-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.home-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .home-hero__btn {
   padding: 0.9rem 2rem; border-radius: 10px; font-weight: 700;
   font-size: 0.95rem; transition: all 0.25s ease; cursor: pointer; border: none;
@@ -43,7 +43,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2.5rem;
   align-items: center;
 }
 .iso-badge {
