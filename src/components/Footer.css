@@ -11,16 +11,57 @@
     padding-bottom: 3rem;
 }
 
-.footer-brand h3 {
-    color: var(--white);
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
+.footer-logo {
+    height: 70px;
+    width: auto;
+    display: block;
+    margin-bottom: 1.5rem;
 }
 
 .footer-brand p {
     font-size: 0.95rem;
     line-height: 1.7;
     opacity: 0.8;
+}
+
+.footer-certifications {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.iso-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.iso-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.iso-text {
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: var(--white);
+    letter-spacing: 0.05em;
+}
+
+.iso-desc {
+    font-size: 0.65rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
 }
 
 .footer-col h4 {

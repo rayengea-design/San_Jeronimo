@@ -5,8 +5,11 @@ import Permisos from './pages/Permisos';
 import Profesionales from './pages/Profesionales';
 import RecuperacionPuntos from './pages/RecuperacionPuntos';
 import Empresa from './pages/Empresa';
-import Opiniones from './pages/Opiniones';
+import Centros from './pages/Centros';
 import Contacto from './pages/Contacto';
+import AvisoLegal from './pages/AvisoLegal';
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import PoliticaCookies from './pages/PoliticaCookies';
 
 export default function App() {
   return (
@@ -18,8 +21,11 @@ export default function App() {
           <Route path="/profesionales" element={<Profesionales />} />
           <Route path="/recuperacion-puntos" element={<RecuperacionPuntos />} />
           <Route path="/empresa" element={<Empresa />} />
-          <Route path="/opiniones" element={<Opiniones />} />
+          <Route path="/centros" element={<Centros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/politica-cookies" element={<PoliticaCookies />} />
         </Route>
       </Routes>
     </BrowserRouter>

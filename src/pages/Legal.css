@@ -1,0 +1,149 @@
+.legal-page {
+    background: #fdfdfd;
+    min-height: 100vh;
+}
+
+.legal-hero {
+    background: #0f172a;
+    color: white;
+    padding: 10rem 0 5rem;
+    text-align: center;
+}
+
+.legal-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+
+.legal-hero p {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.legal-content {
+    padding: 5rem 0;
+}
+
+.legal-card {
+    background: white;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.legal-card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 2.5rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.legal-card h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.legal-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 1.5rem;
+}
+
+.legal-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.legal-card li {
+    font-size: 1rem;
+    color: #475569;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.legal-card li strong {
+    color: #0f172a;
+    min-width: 100px;
+}
+
+.legal-info-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.privacy-summary-box {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.privacy-summary-box h3 {
+    font-size: 1.2rem;
+    color: #0369a1;
+    margin-bottom: 1.5rem;
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.legal-table th {
+    text-align: left;
+    background: rgba(255,255,255,0.5);
+    padding: 12px;
+    border: 1px solid #bae6fd;
+    color: #0369a1;
+    width: 30%;
+}
+
+.legal-table td {
+    padding: 12px;
+    border: 1px solid #bae6fd;
+    color: #475569;
+}
+
+.legal-card a {
+    color: var(--primary);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .legal-table th, .legal-table td {
+        display: block;
+        width: 100%;
+    }
+    .legal-table th {
+        border-bottom: none;
+    }
+}
+    .legal-card {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .legal-hero {
+        padding: 8rem 0 4rem;
+    }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { centros } from '../data/centros';
 import './ContactForm.css';
 
 const courses = [
@@ -15,7 +16,7 @@ const courses = [
 
 export default function ContactForm({ compact = false }) {
     const [form, setForm] = useState({
-        nombre: '', telefono: '', email: '', curso: '', mensaje: '',
+        nombre: '', telefono: '', email: '', centro: '', curso: '', mensaje: '',
     });
 
     const handleChange = (e) => {
@@ -25,7 +26,7 @@ export default function ContactForm({ compact = false }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('¡Gracias! Nos pondremos en contacto contigo en menos de 24 horas.');
-        setForm({ nombre: '', telefono: '', email: '', curso: '', mensaje: '' });
+        setForm({ nombre: '', telefono: '', email: '', centro: '', curso: '', mensaje: '' });
     };
 
     return (
@@ -51,7 +52,7 @@ export default function ContactForm({ compact = false }) {
                     <input
                         type="tel" id="telefono" name="telefono"
                         value={form.telefono} onChange={handleChange}
-                        placeholder="629 24 54 26" required
+                        placeholder="Tu teléfono" required
                     />
                 </div>
             </div>
@@ -66,6 +67,16 @@ export default function ContactForm({ compact = false }) {
                     />
                 </div>
             )}
+
+            <div className="form-group">
+                <label htmlFor="centro">Centro de interés *</label>
+                <select id="centro" name="centro" value={form.centro} onChange={handleChange} required>
+                    <option value="">Selecciona un centro</option>
+                    {centros.map((c) => (
+                        <option key={c.id} value={c.nombre}>{c.nombre}</option>
+                    ))}
+                </select>
+            </div>
 
             <div className="form-group">
                 <label htmlFor="curso">Permiso / Curso de interés</label>

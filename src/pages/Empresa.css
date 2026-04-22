@@ -1,191 +1,269 @@
-.empresa-intro {
+/* Premium 'Elite' Styling for Unified Sobre Nosotros page */
+.sobre-nosotros {
+    background: #fdfdfd;
+}
+
+/* Hero Section */
+/* Hero styles moved to global index.css */
+
+/* History Section */
+.empresa-history {
+    padding: 100px 0;
+}
+
+.history-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+    align-items: center;
 }
 
-.empresa-text h2 {
-    color: var(--dark);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-}
-
-.empresa-text h2::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 50px;
-    height: 4px;
-    background: var(--primary);
-    border-radius: 2px;
-}
-
-.empresa-text p {
-    color: var(--gray);
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-}
-
-.empresa-text strong {
-    color: var(--dark);
-}
-
-.empresa-image-block {
+.brand-badge-circle {
+    width: 80px;
+    height: 80px;
+    background: #0f172a;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.empresa-img {
+.brand-badge-circle img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-    transition: transform 0.6s ease;
+    height: auto;
 }
 
-.empresa-img:hover {
-    transform: scale(1.03);
-}
-
-.empresa-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--light-gray);
-    border-radius: var(--radius);
-}
-
-.stat-num {
+.section-label {
     display: block;
-    font-size: 2.5rem;
-    font-weight: 800;
     color: var(--primary);
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.history-content h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #0f172a;
     line-height: 1.2;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
 }
 
-.stat-label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--gray);
-    margin-top: 0.25rem;
-}
-
-/* Feature cards reused from RecuperacionPuntos */
-.feature-card {
-    display: flex;
-    gap: 1.25rem;
-    background: var(--white);
-    padding: 1.75rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.feature-icon {
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, rgba(46, 149, 182, 0.1), rgba(46, 149, 182, 0.05));
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.feature-card h3 {
-    color: var(--dark);
+.history-content p {
     font-size: 1.1rem;
-    margin-bottom: 0.4rem;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
 }
 
-.feature-card p {
-    color: var(--gray);
-    font-size: 0.92rem;
-}
-
-/* Location */
-.empresa-ubicacion {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-}
-
-.ubicacion-info {
+.stats-row {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.ubicacion-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+.stat-card {
+    background: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
 }
 
-.ubicacion-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, rgba(46, 149, 182, 0.1), rgba(46, 149, 182, 0.05));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
-
-.ubicacion-item strong {
-    display: block;
-    color: var(--dark);
-    font-size: 0.95rem;
+.stat-card h4 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--primary);
     margin-bottom: 0.2rem;
 }
 
-.ubicacion-item p {
-    color: var(--gray);
-    font-size: 0.9rem;
+.stat-card span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
 }
 
-.ubicacion-item a {
-    color: var(--primary);
-    font-weight: 500;
-}
-
-.ubicacion-item a:hover {
-    color: var(--primary-hover);
-}
-
-.ubicacion-mapa {
-    border-radius: var(--radius);
+.main-visual-card {
+    position: relative;
+    border-radius: 32px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 768px) {
-    .empresa-ubicacion {
-        grid-template-columns: 1fr 1.5fr;
-    }
+.main-visual-card img {
+    width: 100%;
+    display: block;
+    transition: transform 1s ease;
 }
 
-@media (min-width: 1024px) {
-    .empresa-intro {
-        grid-template-columns: 1.5fr 1fr;
+.main-visual-card:hover img {
+    transform: scale(1.05);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 30px; right: 30px;
+    background: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 900;
+    color: #0f172a;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Differentials */
+.differentials-section {
+    background: #f8fafc;
+    padding: 100px 0;
+}
+
+.centered-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.centered-header h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.centered-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.differentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.diff-card-modern {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 28px;
+    border: 1px solid #f1f5f9;
+    transition: all 0.4s ease;
+}
+
+.diff-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.05);
+    border-color: var(--primary);
+}
+
+.diff-icon-wrap {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.diff-card-modern h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.diff-card-modern p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Testimonials section */
+.testimonials-section-unif {
+    padding: 100px 0;
+}
+
+.testimonials-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Custom testimonial card style overrides */
+.testimonials-grid-modern .testimonial-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid #f1f5f9;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.testimonials-cta {
+    text-align: center;
+}
+
+.btn-modern-primary {
+    display: inline-block;
+    background: #0f172a;
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    transition: all 0.3s ease;
+}
+
+.btn-modern-primary:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(46, 149, 182, 0.2);
+}
+
+/* Final Location */
+.final-location {
+    padding: 100px 0;
+    background: white;
+}
+
+.location-unif-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.loc-info h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.loc-info > p {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.loc-details p {
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .history-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
+    .empresa-hero h1 { font-size: 3rem; }
+    .location-unif-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .empresa-hero h1 { font-size: 2.5rem; }
+    .stats-row { flex-direction: column; }
+    .testimonials-grid-modern { grid-template-columns: 1fr; }
 }

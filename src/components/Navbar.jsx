@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/logo_blanco.png';
 import './Navbar.css';
 
 const navItems = [
@@ -7,9 +8,8 @@ const navItems = [
     { to: '/permisos', label: 'Permisos' },
     { to: '/profesionales', label: 'Profesionales' },
     { to: '/recuperacion-puntos', label: 'Recuperación' },
-    { to: '/empresa', label: 'Empresa' },
-    { to: '/opiniones', label: 'Opiniones' },
-    { to: '/contacto', label: 'Contacto' },
+    { to: '/empresa', label: 'Sobre Nosotros' },
+    { to: '/centros', label: 'Centros' },
 ];
 
 export default function Navbar() {
@@ -33,9 +33,8 @@ export default function Navbar() {
         <>
             <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
                 <div className="navbar-inner">
-                    <Link to="/" className="navbar-logo" onClick={closeMenu}>
-                        <span className="logo-icon">SJ</span>
-                        Autoescuela San Jerónimo
+                    <Link to="/" className="navbar-brand" onClick={closeMenu}>
+                        <img src={logo} alt="Autoescuela San Jerónimo" className="navbar-logo" />
                     </Link>
 
                     <div className="navbar-links">
