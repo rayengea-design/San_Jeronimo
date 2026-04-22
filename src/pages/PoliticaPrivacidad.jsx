@@ -5,8 +5,8 @@ import './Legal.css';
 export default function PoliticaPrivacidad() {
     return (
         <div className="legal-page">
-            <SEO 
-                title="Política de Privacidad - Autoescuela San Jerónimo" 
+            <SEO
+                title="Política de Privacidad - Autoescuela San Jerónimo"
                 description="Información detallada sobre el tratamiento de tus datos personales conforme al RGPD y la LOPDGDD."
             />
 
@@ -29,7 +29,7 @@ export default function PoliticaPrivacidad() {
                                     <tbody>
                                         <tr>
                                             <th>Responsable</th>
-                                            <td>Autoescuela San Jerónimo</td>
+                                            <td>Centro de Formación Cosmos, SLU.</td>
                                         </tr>
                                         <tr>
                                             <th>Finalidad</th>
@@ -53,7 +53,7 @@ export default function PoliticaPrivacidad() {
 
                             <h2>1. ¿Quién es el responsable del tratamiento de sus datos?</h2>
                             <p>
-                                El titular responsable del tratamiento de los datos es Autoescuela San Jerónimo, con domicilio en C. Gabriel Martínez Belzunces, 5, 04600 Huércal‑Overa, Almería. Email de contacto: sanjeronimo@hotmail.es.
+                                El titular responsable del tratamiento de los datos es Centro de Formación Cosmos, SLU, con domicilio en C. Gabriel Martínez Belzunces, 5, 04600 Huércal‑Overa, Almería. Email de contacto: sanjeronimo@hotmail.es.
                             </p>
 
                             <h2>2. ¿Con qué finalidad tratamos sus datos personales?</h2>

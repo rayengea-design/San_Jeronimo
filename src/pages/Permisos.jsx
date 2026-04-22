@@ -131,7 +131,7 @@ const categories = [
                 minAge: 21,
                 bullets: [
                     'Mma superior a 3.500kg',
-                    'Camión Automático moderno',
+                    'Camión Equipado moderno',
                     'Alta demanda laboral',
                     '18 años con CAP inicial',
                 ],
@@ -168,7 +168,7 @@ const categories = [
 
 const fleet = [
     { name: 'Coche de Prácticas', type: 'Turismo Manual', desc: 'Turismos de última generación equipados con toda la seguridad ADAS.', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80' },
-    { name: 'El Gigante', type: 'Camión Automático', desc: '¡Nuestra estrella! Aprenderás con un camión automático nuevo, más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=800&q=80' },
+    { name: 'El Gigante', type: 'Camión Equipped', desc: '¡Nuestra estrella! Aprenderás con un camión equipado nuevo, más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=800&q=80' },
     { name: 'Flota Moto', type: 'Varias cilindradas', desc: 'Motos adaptadas perfectamente a cada examen: AM, A1, A2 y A.', img: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=800&q=80' },
 ];
 
@@ -192,7 +192,7 @@ export default function Permisos() {
         <div className="permisos-page">
             <SEO
                 title="Permisos de conducir - Showroom Profesional"
-                description="Consigue tu carnet de coche, moto, camión o autobús con los mejores profesionales. Vehículos modernos y camión automático único en la zona."
+                description="Consigue tu carnet de coche, moto, camión o autobús con los mejores profesionales. Vehículos modernos y camión equipadoo único en la zona."
             />
 
             {/* HERO */}
@@ -310,7 +310,7 @@ export default function Permisos() {
                                     <p>No eres un número, eres un futuro conductor.</p>
                                 </div>
                                 <div className="p-item">
-                                    <strong>Camión Automático</strong>
+                                    <strong>Camión Equipado</strong>
                                     <p>Única autoescuela en la zona con esta facilidad.</p>
                                 </div>
                                 <div className="p-item">

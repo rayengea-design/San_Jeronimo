@@ -124,8 +124,8 @@ export default function Home() {
                                 <span>tu aprobado es nuestro éxito.</span>
                             </h1>
                             <p className="home-hero__subtitle">
-                                Más de 40 años formando conductores en Almería.
-                                11 centros, todos los permisos y la mejor tasa de aprobados de la comarca.
+                                Más de 40 años formando conductores.
+                                11 centros, todos los permisos y la mejor tasa de aprobados de la zona.
                             </p>
                             <div className="home-hero__actions">
                                 <Link to="/permisos" className="home-hero__btn home-hero__btn--primary">Ver permisos disponibles</Link>

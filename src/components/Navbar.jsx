@@ -5,11 +5,11 @@ import './Navbar.css';
 
 const navItems = [
     { to: '/', label: 'Inicio' },
+    { to: '/centros', label: 'Centros' },
     { to: '/permisos', label: 'Permisos' },
     { to: '/profesionales', label: 'Profesionales' },
     { to: '/recuperacion-puntos', label: 'Recuperación' },
     { to: '/empresa', label: 'Sobre Nosotros' },
-    { to: '/centros', label: 'Centros' },
 ];
 
 export default function Navbar() {
