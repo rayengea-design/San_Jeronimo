@@ -4,6 +4,9 @@ import { generateLocalBusinessSchema } from '../utils/seoSchemas';
 import TestimonialCard from '../components/TestimonialCard';
 import AnimatedSection from '../components/AnimatedSection';
 import logo from '../assets/logo_blanco.png';
+import camionEquipado from '../assets/IMG_0954.jpg';
+import logisticaImage from '../assets/Gemini_Generated_Image_kfn4jqkfn4jqkfn4.jpg';
+import camionImage from '../assets/Gemini_Generated_Image_bpu2dzbpu2dzbpu2.png';
 import { centros } from '../data/centros';
 import './Home.css';
 
@@ -50,7 +53,7 @@ const permisosShowcase = [
         tag: 'CAP y ADR',
         title: 'Logística Profesional',
         desc: 'Certificaciones obligatorias para el sector',
-        image: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=800&q=80',
+        image: logisticaImage,
         link: '/profesionales',
     },
     {
@@ -64,7 +67,7 @@ const permisosShowcase = [
 
 const fleet = [
     { name: 'Turismo de Prácticas', type: 'Última generación', desc: 'Equipados con ADAS y doble mando digital.', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=400&q=80' },
-    { name: 'Camiónes Equipados', type: 'Exclusivo en la zona', desc: 'Aprendizaje más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=400&q=80' },
+    { name: 'Camiónes Equipados', type: 'Exclusivo en la zona', desc: 'Aprendizaje más fácil y eficiente.', img: camionEquipado },
     { name: 'Motos Adaptadas', type: 'Para cada examen', desc: 'Flota específica para AM, A1, A2 y A.', img: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=400&q=80' },
 ];
 
@@ -231,7 +234,7 @@ export default function Home() {
                     <div className="profesional-split">
                         <AnimatedSection animation="fade-right">
                             <div className="profesional-image">
-                                <img src="https://images.unsplash.com/photo-1591768793355-74d7ca736056?w=1000&q=80" alt="Formación profesional camión" />
+                                <img src={camionImage} alt="Formación profesional camión" />
                                 <div className="profesional-image__badge">
                                     <span className="profesional-image__badge-num">95%</span>
                                     <span className="profesional-image__badge-text">aprobados en<br />primer examen</span>

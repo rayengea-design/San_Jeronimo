@@ -99,6 +99,31 @@ ul {
   white-space: nowrap;
 }
 
+.btn-popup {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.popup-phone {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.popup-phone:hover {
+  color: var(--primary);
+}
+
 .btn-primary {
   background: var(--primary);
   color: var(--white);
@@ -369,4 +394,55 @@ ul {
 
 .mb-3 {
   margin-bottom: 1.5rem;
+}
+
+/* =============================================
+   LEAFLET CUSTOM MARKERS
+   ============================================= */
+.custom-marker-wrapper {
+  background: none !important;
+  border: none !important;
+}
+
+.marker-container {
+  position: relative;
+  width: 32px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-pin {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  background: rgb(46, 149, 182);
+  transform: rotate(-45deg);
+  border: 3px solid white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.marker-container.active .marker-pin {
+  background: rgb(13, 47, 103);
+  transform: rotate(-45deg) scale(1.2);
+  box-shadow: 0 4px 16px rgba(13, 47, 103, 0.45);
+}
+
+/* Leaflet popup override */
+.premium-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  padding: 0;
+  overflow: hidden;
+}
+
+.premium-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 1rem 1.25rem;
+}
+
+.premium-popup .leaflet-popup-tip {
+  background: white;
 }

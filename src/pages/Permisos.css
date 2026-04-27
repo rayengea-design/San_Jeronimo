@@ -97,6 +97,8 @@
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .permit-card:hover {
@@ -116,12 +118,18 @@
 .permit-card-image {
     position: relative;
     height: 220px;
+    overflow: hidden;
 }
 
 .permit-card-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    min-height: 100%;
+    display: block;
 }
 
 .permit-tag {

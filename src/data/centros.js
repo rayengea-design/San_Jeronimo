@@ -9,8 +9,7 @@ export const centros = [
         photos: [
             'https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=800&q=80',
             'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=800&q=80'
-        ],
-        destacado: true
+        ]
     },
     {
         id: 'huercal-poligono',

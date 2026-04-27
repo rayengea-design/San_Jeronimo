@@ -5,11 +5,36 @@ import TestimonialCard from '../components/TestimonialCard';
 import logo from '../assets/logo_blanco.png';
 import './Empresa.css';
 
+const IconDiamond = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+        <path d="M6 3h12l4 6-10 13L2 9Z" /><path d="M2 9h20" /><path d="m12 22-5-13" /><path d="m12 22 5-13" />
+    </svg>
+);
+const IconTruck = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+        <path d="M15 18H9" />
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14" />
+        <circle cx="17" cy="18" r="2" /><circle cx="7" cy="18" r="2" />
+    </svg>
+);
+const IconGraduation = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+    </svg>
+);
+const IconStar = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+    </svg>
+);
+
 const differentials = [
-    { icon: '💎', title: 'Excelencia en la Formación', text: 'Más de 40 años perfeccionando el método para que aprendas no solo a aprobar, sino a conducir con total seguridad.' },
-    { icon: '🚚', title: 'Flota Superior', text: 'Vehículos nuevos y camiones automáticos de última generación. La mejor tecnología para tu aprendizaje.' },
-    { icon: '🎓', title: 'Centro Multidisciplinar', text: 'Autorización oficial para CAP, ADR y todos los permisos de conducción en un solo lugar.' },
-    { icon: '🌟', title: 'Trato Personalizado', text: 'No eres un número. Adaptamos cada fase de tu formación a tus necesidades específicas.' },
+    { icon: <IconDiamond />, title: 'Excelencia en la Formación', text: 'Más de 40 años perfeccionando el método para que aprendas no solo a aprobar, sino a conducir con total seguridad.' },
+    { icon: <IconTruck />, title: 'Flota Superior', text: 'Vehículos nuevos y camiones automáticos de última generación. La mejor tecnología para tu aprendizaje.' },
+    { icon: <IconGraduation />, title: 'Centro Multidisciplinar', text: 'Autorización oficial para CAP, ADR y todos los permisos de conducción en un solo lugar.' },
+    { icon: <IconStar />, title: 'Trato Personalizado', text: 'No eres un número. Adaptamos cada fase de tu formación a tus necesidades específicas.' },
 ];
 
 const testimonials = [
@@ -151,9 +176,24 @@ export default function Empresa() {
                             <h3>Sede Central</h3>
                             <p>Visita nuestras oficinas centrales en Huércal-Overa para cualquier gestión administrativa.</p>
                             <div className="loc-details">
-                                <p>📍 C. Gabriel Martínez Belzunces, 5 (Polígono)</p>
-                                <p>📞 652 598 193 / 629 245 406</p>
-                                <p>✉️ sanjeronimo@hotmail.es</p>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" style={{display:'inline',marginRight:'6px',verticalAlign:'middle'}}>
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    C. Gabriel Martínez Belzunces, 5 (Polígono)
+                                </p>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" style={{display:'inline',marginRight:'6px',verticalAlign:'middle'}}>
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.92 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    652 598 193 / 629 245 406
+                                </p>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" style={{display:'inline',marginRight:'6px',verticalAlign:'middle'}}>
+                                        <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                    sanjeronimo@hotmail.es
+                                </p>
                             </div>
                         </div>
                         <div className="loc-map-wrap">

@@ -1,149 +1,194 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import SEO from '../components/SEO';
 import { generateLocalBusinessSchema } from '../utils/seoSchemas';
 import AnimatedSection from '../components/AnimatedSection';
 import CentrosMap from '../components/MapContainer';
-import LocationSearch from '../components/LocationSearch';
 import { centros } from '../data/centros';
 import './Centros.css';
 
-function calculateDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371;
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLon = (lon2 - lon1) * Math.PI / 180;
-    const a = Math.sin(dLat / 2) ** 2 +
-              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-              Math.sin(dLon / 2) ** 2;
-    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-const PhoneIcon = () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+const IconPhone = () => (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.4 2 2 0 0 1 3.92 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
 );
 
-const PinIcon = () => (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
+const IconPin = () => (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
+    </svg>
+);
+
+const IconNav = () => (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="3 11 22 2 13 21 11 13 3 11" />
     </svg>
 );
 
 export default function Centros() {
     const [activeId, setActiveId] = useState(null);
     const [selectedCentro, setSelectedCentro] = useState(null);
-    const [nearestId, setNearestId] = useState(null);
-    const [mobileView, setMobileView] = useState('list');
+    const cardRefs = useRef({});
+    const cardsSection = useRef(null);
 
-    const handleSelectCentro = (id) => {
-        setActiveId(id);
-        if (window.innerWidth < 1024) setMobileView('map');
-    };
+    const handlePinClick = useCallback((centro) => {
+        setActiveId(centro.id);
+    }, []);
 
-    const handleLocationSearch = (searchCoords) => {
-        let minDistance = Infinity;
-        let closestId = null;
-        centros.forEach(centro => {
-            const dist = calculateDistance(searchCoords.lat, searchCoords.lon, centro.coords[0], centro.coords[1]);
-            if (dist < minDistance) { minDistance = dist; closestId = centro.id; }
-        });
-        if (closestId) { setNearestId(closestId); handleSelectCentro(closestId); }
-    };
+    const handleOpenModal = useCallback((centro) => {
+        setSelectedCentro(centro);
+    }, []);
+
+    const handleCloseModal = useCallback(() => {
+        setSelectedCentro(null);
+    }, []);
+
+    const handleCardClick = useCallback((centro) => {
+        setActiveId(centro.id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
+    const handleReset = useCallback(() => {
+        setActiveId(null);
+    }, []);
 
     return (
-        <div className="centros-page">
-            <SEO 
-                title="Nuestros Centros — Autoescuela San Jerónimo" 
-                description="11 centros en Almería y Murcia. Encuentra tu autoescuela más cercana."
+        <>
+            <div className="centros-page">
+            <SEO
+                title="Nuestros Centros — Autoescuela San Jerónimo"
+                description="11 centros en Almería y Murcia. Encuentra tu autoescuela más cercana con mapa interactivo."
                 url="https://autoescuelasanjeronimo.es/centros"
                 schema={generateLocalBusinessSchema()}
             />
 
-            {/* HERO COMPACTO */}
-            <section className="centros-hero-compact">
+            {/* HERO */}
+            <section className="page-hero-elite">
+                <div className="hero-mesh-overlay"></div>
                 <div className="container">
                     <AnimatedSection animation="fade-up">
-                        <span className="centros-hero__label">Red de centros</span>
-                        <h1>Encuentra tu centro más cercano</h1>
+                        <span className="hero-tag">Red de centros</span>
+                        <h1>Encuentra tu centro <span className="text-gradient">más cercano</span></h1>
                         <p>11 ubicaciones en Almería y Murcia para que te formes cerca de casa.</p>
                     </AnimatedSection>
                 </div>
             </section>
 
-            {/* MOBILE TABS */}
-            <div className="centros-mobile-tabs">
-                <button className={mobileView === 'list' ? 'active' : ''} onClick={() => setMobileView('list')}>Lista</button>
-                <button className={mobileView === 'map' ? 'active' : ''} onClick={() => setMobileView('map')}>Mapa</button>
-            </div>
-
-            {/* EXPLORER */}
-            <section className="centros-explorer">
-                <div className={`explorer-grid ${mobileView === 'map' ? 'show-map' : 'show-list'}`}>
-                    {/* SIDEBAR */}
-                    <div className="explorer-sidebar">
-                        <div className="sidebar-sticky-content">
-                            <div className="search-wrap">
-                                <LocationSearch onSearch={handleLocationSearch} />
-                            </div>
-                            <div className="centers-scroll-area">
-                                {centros.map((centro) => (
-                                    <div
-                                        key={centro.id}
-                                        className={`center-card-compact ${activeId === centro.id ? 'is-active' : ''} ${nearestId === centro.id ? 'is-nearest' : ''}`}
-                                        onClick={() => handleSelectCentro(centro.id)}
-                                    >
-                                        <div className="card-compact__header">
-                                            <div className="card-compact__info">
-                                                <h3>{centro.nombre}</h3>
-                                                <p className="card-compact__address">
-                                                    <PinIcon /> {centro.direccion}
-                                                </p>
-                                                {centro.telefono && (
-                                                    <a href={`tel:${centro.telefono.replace(/\s/g, '')}`} className="card-compact__phone" onClick={(e) => e.stopPropagation()}>
-                                                        <PhoneIcon /> {centro.telefono}
-                                                    </a>
-                                                )}
-                                            </div>
-                                            <button
-                                                className="btn-circle-action"
-                                                onClick={(e) => { e.stopPropagation(); setSelectedCentro(centro); }}
-                                                aria-label="Ver detalles"
-                                            >→</button>
-                                        </div>
-                                        {centro.destacado && <span className="badge-sede">Sede Principal</span>}
-                                        {nearestId === centro.id && <span className="badge-nearest">Más cercano a ti</span>}
-                                    </div>
-                                ))}
-                            </div>
+            {/* STATS STRIP */}
+            <div className="centros-stats-strip">
+                <div className="container">
+                    <div className="stats-strip-inner">
+                        <div className="strip-stat">
+                            <span className="strip-num">11</span>
+                            <span className="strip-label">Centros</span>
+                        </div>
+                        <div className="strip-divider" />
+                        <div className="strip-stat">
+                            <span className="strip-num">2</span>
+                            <span className="strip-label">Provincias</span>
+                        </div>
+                        <div className="strip-divider" />
+                        <div className="strip-stat">
+                            <span className="strip-num">40+</span>
+                            <span className="strip-label">Años de experiencia</span>
+                        </div>
+                        <div className="strip-divider" />
+                        <div className="strip-stat strip-hint">
+                            <IconPin />
+                            <span className="strip-label">Haz clic en un pin o tarjeta para explorar</span>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    {/* MAP */}
-                    <div className="explorer-map">
-                        <div className="map-absolute-container">
-                            <CentrosMap
-                                centers={centros}
-                                activeId={activeId}
-                                onMarkerClick={(c) => setSelectedCentro(c)}
-                            />
+            {/* FULL-WIDTH MAP */}
+            <section className="centros-map-section">
+                <CentrosMap
+                    centers={centros}
+                    activeId={activeId}
+                    onMarkerClick={handlePinClick}
+                    onOpenModal={handleOpenModal}
+                    onReset={handleReset}
+                />
+            </section>
+
+            {/* CARDS GRID */}
+            <section className="centros-cards-section" ref={cardsSection}>
+                <div className="container">
+                    <AnimatedSection animation="fade-up">
+                        <div className="centered-header">
+                            <span className="section-label">Directorio completo</span>
+                            <h2>Todos nuestros centros</h2>
                         </div>
+                    </AnimatedSection>
+
+                    <div className="centros-cards-grid">
+                        {centros.map((centro, i) => (
+                            <AnimatedSection key={centro.id} animation="fade-up" delay={i * 60}>
+                                <div
+                                    ref={el => { cardRefs.current[centro.id] = el; }}
+                                    className={`centro-card ${activeId === centro.id ? 'centro-card--active' : ''}`}
+                                    onClick={() => handleCardClick(centro)}
+                                >
+                                    {centro.destacado && (
+                                        <span className="centro-card__badge">Sede principal</span>
+                                    )}
+                                    <div className="centro-card__header">
+                                        <div className="centro-card__dot"></div>
+                                        <h3>{centro.nombre}</h3>
+                                    </div>
+
+                                    <div className="centro-card__details">
+                                        <p className="centro-card__address">
+                                            <IconPin />
+                                            <span>{centro.direccion}<br />{centro.poblacion}</span>
+                                        </p>
+                                        {centro.telefono ? (
+                                            <a
+                                                href={`tel:${centro.telefono.replace(/\s/g, '')}`}
+                                                className="centro-card__phone"
+                                                onClick={e => e.stopPropagation()}
+                                            >
+                                                <IconPhone />
+                                                {centro.telefono}
+                                            </a>
+                                        ) : (
+                                            <span className="centro-card__no-phone">Sin teléfono directo</span>
+                                        )}
+                                    </div>
+
+                                    <div className="centro-card__footer">
+                                        <a
+                                            href={`https://www.google.com/maps/search/?api=1&query=${centro.coords[0]},${centro.coords[1]}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="centro-card__nav-btn"
+                                            onClick={e => e.stopPropagation()}
+                                        >
+                                            <IconNav /> Cómo llegar
+                                        </a>
+                                        <button className="centro-card__map-btn" aria-label="Ver en mapa">
+                                            Ver en mapa
+                                        </button>
+                                    </div>
+                                </div>
+                            </AnimatedSection>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* CONTACT BAR */}
+            {/* CTA */}
             <section className="centros-contact-bar">
                 <div className="container">
                     <AnimatedSection animation="fade-up">
                         <div className="contact-bar__inner">
                             <div className="contact-bar__text">
-                                <h3>¿No encuentras tu centro?</h3>
+                                <h3>¿Tienes alguna duda?</h3>
                                 <p>Llámanos y te orientamos al centro más adecuado para tu formación.</p>
                             </div>
                             <div className="contact-bar__actions">
                                 <a href="tel:+34629245406" className="contact-bar__btn contact-bar__btn--primary">
-                                    <PhoneIcon /> 629 245 406
+                                    <IconPhone /> 629 245 406
                                 </a>
                                 <a href="https://wa.me/34629245406" target="_blank" rel="noopener noreferrer" className="contact-bar__btn contact-bar__btn--whatsapp">
                                     WhatsApp
@@ -153,60 +198,71 @@ export default function Centros() {
                     </AnimatedSection>
                 </div>
             </section>
+        </div>
 
-            {/* MODAL */}
-            {selectedCentro && (
-                <div className="elite-modal-overlay" onClick={() => setSelectedCentro(null)}>
-                    <div className="elite-modal-card" onClick={(e) => e.stopPropagation()}>
-                        <button className="elite-close-btn" onClick={() => setSelectedCentro(null)}>&times;</button>
-                        <div className="elite-modal-content">
-                            <div className="elite-modal-left">
-                                <div className="main-image-wrap">
-                                    <img src={selectedCentro.photos[1] || selectedCentro.photos[0]} alt={selectedCentro.nombre} />
-                                </div>
-                                <div className="thumb-gallery">
-                                    {selectedCentro.photos.map((p, idx) => (
-                                        <img key={idx} src={p} alt="Instalación" className="mini-thumb" />
-                                    ))}
+        {/* MODAL */}
+        {selectedCentro && (
+            <div className="centro-modal-overlay" onClick={handleCloseModal}>
+                <div className="centro-modal" onClick={e => e.stopPropagation()}>
+                    <button className="centro-modal__close" onClick={handleCloseModal} aria-label="Cerrar">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+                            <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    {/* Photo gallery */}
+                    <div className="centro-modal__gallery">
+                        {selectedCentro.photos.map((p, i) => (
+                            <img key={i} src={p} alt={`${selectedCentro.nombre} ${i + 1}`} className={i === 0 ? 'main-photo' : 'thumb-photo'} />
+                        ))}
+                    </div>
+
+                    {/* Info */}
+                    <div className="centro-modal__body">
+                        <div className="centro-modal__header">
+                            {selectedCentro.destacado && <span className="modal-badge">Sede principal</span>}
+                            <h2>{selectedCentro.nombre}</h2>
+                            <p className="modal-city">{selectedCentro.poblacion}</p>
+                        </div>
+
+                        <div className="centro-modal__info">
+                            <div className="modal-info-row">
+                                <IconPin />
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <span>{selectedCentro.direccion}</span>
                                 </div>
                             </div>
-                            <div className="elite-modal-right">
-                                <div className="header-box">
-                                    <span className="tag">{selectedCentro.destacado ? 'Sede Principal' : 'Centro Asociado'}</span>
-                                    <h2>{selectedCentro.nombre}</h2>
-                                    <p className="loc">{selectedCentro.poblacion}</p>
-                                </div>
-                                <div className="info-grid">
-                                    <div className="info-box">
-                                        <label>Dirección</label>
-                                        <p>{selectedCentro.direccion}</p>
+                            {selectedCentro.telefono && (
+                                <div className="modal-info-row">
+                                    <IconPhone />
+                                    <div>
+                                        <strong>Teléfono</strong>
+                                        <a href={`tel:${selectedCentro.telefono.replace(/\s/g, '')}`}>{selectedCentro.telefono}</a>
                                     </div>
-                                    {selectedCentro.telefono && (
-                                        <div className="info-box">
-                                            <label>Contacto Directo</label>
-                                            <p className="phone-high">{selectedCentro.telefono}</p>
-                                        </div>
-                                    )}
                                 </div>
-                                <div className="modal-cta-group">
-                                    <a
-                                        href={`https://www.google.com/maps/search/?api=1&query=${selectedCentro.coords[0]},${selectedCentro.coords[1]}`}
-                                        target="_blank" rel="noopener noreferrer"
-                                        className="btn-premium-action"
-                                    >
-                                        <PinIcon /> Cómo llegar
-                                    </a>
-                                    {selectedCentro.telefono && (
-                                        <a href={`tel:${selectedCentro.telefono.replace(/\s/g, '')}`} className="btn-outline-action">
-                                            Llamar ahora
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
+                            )}
+                        </div>
+
+                        <div className="centro-modal__actions">
+                            <a
+                                href={`https://www.google.com/maps/search/?api=1&query=${selectedCentro.coords[0]},${selectedCentro.coords[1]}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="modal-btn-primary"
+                            >
+                                <IconNav /> Cómo llegar
+                            </a>
+                            {selectedCentro.telefono && (
+                                <a href={`tel:${selectedCentro.telefono.replace(/\s/g, '')}`} className="modal-btn-outline">
+                                    <IconPhone /> Llamar ahora
+                                </a>
+                            )}
                         </div>
                     </div>
                 </div>
+            </div>
             )}
-        </div>
+        </>
     );
 }

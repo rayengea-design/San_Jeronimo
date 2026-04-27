@@ -3,6 +3,10 @@ import SEO from '../components/SEO';
 import { generateCourseSchema } from '../utils/seoSchemas';
 import Accordion from '../components/Accordion';
 import AnimatedSection from '../components/AnimatedSection';
+import busImage from '../assets/IMG_0948.jpg';
+import trailerImage from '../assets/IMG_0955.jpg';
+import truckImage from '../assets/IMG_0954.jpg';
+import motoAMImage from '../assets/Gemini_Generated_Image_v41hh8v41hh8v41h.png';
 import './Permisos.css';
 
 const categories = [
@@ -13,7 +17,7 @@ const categories = [
         description: 'Desde ciclomotores hasta las motocicletas más potentes. Tu libertad sobre dos ruedas empieza aquí con instructores expertos.',
         permits: [
             {
-                image: 'https://images.unsplash.com/photo-1558981403-c5f91ebca638?w=800&q=80',
+                image: motoAMImage,
                 title: 'Permiso AM – Ciclomotor',
                 minAge: 15,
                 bullets: [
@@ -140,7 +144,7 @@ const categories = [
                 tag: 'Profesional'
             },
             {
-                image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=800',
+                image: trailerImage,
                 title: 'Permiso C+E – Tráiler',
                 minAge: 21,
                 bullets: [
@@ -152,7 +156,7 @@ const categories = [
                 tag: 'Máster'
             },
             {
-                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800',
+                image: busImage,
                 title: 'Permiso D – Autobús',
                 minAge: 24,
                 bullets: [
@@ -169,7 +173,7 @@ const categories = [
 
 const fleet = [
     { name: 'Coche de Prácticas', type: 'Turismo Manual', desc: 'Turismos de última generación equipados con toda la seguridad ADAS.', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80' },
-    { name: 'El Gigante', type: 'Camión Equipped', desc: '¡Nuestra estrella! Aprenderás con un camión equipado nuevo, más fácil y eficiente.', img: 'https://images.unsplash.com/photo-1586191582151-f73770701041?w=800&q=80' },
+    { name: 'El Gigante', type: 'Camión Equipped', desc: '¡Nuestra estrella! Aprenderás con un camión equipado nuevo, más fácil y eficiente.', img: truckImage },
     { name: 'Flota Moto', type: 'Varias cilindradas', desc: 'Motos adaptadas perfectamente a cada examen: AM, A1, A2 y A.', img: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=800&q=80' },
 ];
 
