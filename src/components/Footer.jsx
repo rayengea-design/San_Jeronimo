@@ -81,6 +81,7 @@ export default function Footer() {
                         <Link to="/aviso-legal">Aviso legal</Link>
                         <Link to="/politica-privacidad">Política de privacidad</Link>
                         <Link to="/politica-cookies">Política de cookies</Link>
+                        <Link to="/tablon">Tablón de anuncios</Link>
                     </div>
                 </div>
             </div>

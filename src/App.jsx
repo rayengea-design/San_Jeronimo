@@ -10,6 +10,7 @@ import Contacto from './pages/Contacto';
 import AvisoLegal from './pages/AvisoLegal';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import PoliticaCookies from './pages/PoliticaCookies';
+import TablonAnuncios from './pages/TablonAnuncios';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/empresa" element={<Empresa />} />
           <Route path="/centros" element={<Centros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/tablon" element={<TablonAnuncios />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/politica-cookies" element={<PoliticaCookies />} />
