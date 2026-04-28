@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     Sitemap({
-      hostname: 'https://autoescuelasanjeronimo.es',
+      hostname: 'https://www.autoescuelasanjeronimo.es',
       readable: true,
       dynamicRoutes: [
         '/',
@@ -17,6 +17,7 @@ export default defineConfig({
         '/recuperacion-puntos',
         '/empresa',
         '/contacto',
+        '/tablon',
         '/aviso-legal',
         '/politica-privacidad',
         '/politica-cookies'
