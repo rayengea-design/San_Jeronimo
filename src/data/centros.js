@@ -3,6 +3,9 @@ import imgPulpi from '../assets/Pulpi.jpeg';
 import imgHuercalCentro from '../assets/Huercal-overa-centro.jpeg';
 import imgAntas from '../assets/Antas.jpeg';
 import imgCampohermoso from '../assets/Campohermoso.jpeg';
+import imgOlula from '../assets/Olula.jpeg';
+import imgAlbox from '../assets/Albox.jpeg';
+import imgPuertoLumbreras from '../assets/Puerto-lumbreras.jpeg';
 
 export const centros = [
     {
@@ -82,8 +85,7 @@ export const centros = [
         telefono: '604 878 016',
         coords: [37.355928, -2.296446],
         photos: [
-            'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-            'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80'
+            imgOlula
         ]
     },
     {
@@ -105,8 +107,7 @@ export const centros = [
         telefono: '663 042 612',
         coords: [37.386434, -2.146257],
         photos: [
-            'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80',
-            'https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?w=800&q=80'
+            imgAlbox
         ]
     },
     {
@@ -114,7 +115,7 @@ export const centros = [
         nombre: 'San Isidro de Níjar',
         direccion: 'Calle Comercio, s/n',
         poblacion: '04117, San Isidro (Níjar), Almería',
-        telefono: '',
+        telefono: '667 42 52 83',
         coords: [36.9065, -2.1226],
         photos: [
             'https://images.unsplash.com/photo-1574950578143-85f0b977bb14?w=800&q=80',
@@ -129,8 +130,7 @@ export const centros = [
         telefono: '',
         coords: [37.5615, -1.8105],
         photos: [
-            'https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=800&q=80',
-            'https://images.unsplash.com/photo-1517404215738-15263e9f9178?w=800&q=80'
+            imgPuertoLumbreras
         ]
     },
     {
