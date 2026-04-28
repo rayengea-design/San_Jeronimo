@@ -129,9 +129,13 @@ export default function Centros() {
                                     className={`centro-card ${activeId === centro.id ? 'centro-card--active' : ''}`}
                                     onClick={() => handleCardClick(centro)}
                                 >
-                                    {centro.destacado && (
-                                        <span className="centro-card__badge">Sede principal</span>
-                                    )}
+                                    <div className="centro-card__image">
+                                        <img src={centro.photos[0]} alt={`Fachada ${centro.nombre}`} loading="lazy" />
+                                        {centro.destacado && (
+                                            <span className="centro-card__badge">Sede principal</span>
+                                        )}
+                                    </div>
+                                    <div className="centro-card__body">
                                     <div className="centro-card__header">
                                         <div className="centro-card__dot"></div>
                                         <h3>{centro.nombre}</h3>
@@ -169,6 +173,7 @@ export default function Centros() {
                                         <button className="centro-card__map-btn" aria-label="Ver en mapa">
                                             Ver en mapa
                                         </button>
+                                    </div>
                                     </div>
                                 </div>
                             </AnimatedSection>
