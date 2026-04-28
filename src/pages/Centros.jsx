@@ -43,6 +43,11 @@ export default function Centros() {
     }, []);
 
     const handleCardClick = useCallback((centro) => {
+        setSelectedCentro(centro);
+    }, []);
+
+    const handleShowInMap = useCallback((centro, e) => {
+        e.stopPropagation();
         setActiveId(centro.id);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
@@ -170,7 +175,11 @@ export default function Centros() {
                                         >
                                             <IconNav /> Cómo llegar
                                         </a>
-                                        <button className="centro-card__map-btn" aria-label="Ver en mapa">
+                                        <button 
+                                            className="centro-card__map-btn" 
+                                            aria-label="Ver en mapa"
+                                            onClick={(e) => handleShowInMap(centro, e)}
+                                        >
                                             Ver en mapa
                                         </button>
                                     </div>
@@ -217,9 +226,7 @@ export default function Centros() {
 
                     {/* Photo gallery */}
                     <div className="centro-modal__gallery">
-                        {selectedCentro.photos.map((p, i) => (
-                            <img key={i} src={p} alt={`${selectedCentro.nombre} ${i + 1}`} className={i === 0 ? 'main-photo' : 'thumb-photo'} />
-                        ))}
+                        <img src={selectedCentro.photos[0]} alt={`Fachada de ${selectedCentro.nombre}`} className="main-photo" />
                     </div>
 
                     {/* Info */}

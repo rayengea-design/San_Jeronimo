@@ -1,3 +1,9 @@
+import imgVera from '../assets/Vera.jpeg';
+import imgPulpi from '../assets/Pulpi.jpeg';
+import imgHuercalCentro from '../assets/Huercal-overa-centro.jpeg';
+import imgAntas from '../assets/Antas.jpeg';
+import imgCampohermoso from '../assets/Campohermoso.jpeg';
+
 export const centros = [
     {
         id: 'huercal-centro',
@@ -7,8 +13,7 @@ export const centros = [
         telefono: '629 245 406',
         coords: [37.392956, -1.944754],
         photos: [
-            'https://images.unsplash.com/photo-1520038410233-7141be7e6f97?w=800&q=80',
-            'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=800&q=80'
+            imgHuercalCentro
         ]
     },
     {
@@ -44,8 +49,7 @@ export const centros = [
         telefono: '678 680 846',
         coords: [37.247551, -1.868023],
         photos: [
-            'https://images.unsplash.com/photo-1585644131575-f938d2cd488d?w=800&q=80',
-            'https://images.unsplash.com/photo-1453722758971-50caa730aa0b?w=800&q=80'
+            imgVera
         ]
     },
     {
@@ -56,8 +60,7 @@ export const centros = [
         telefono: '663 027 083',
         coords: [37.407472, -1.749076],
         photos: [
-            'https://images.unsplash.com/photo-1549416550-eb994c653065?w=800&q=80',
-            'https://images.unsplash.com/photo-1621370219660-f8e0e854fa12?w=800&q=80'
+            imgPulpi
         ]
     },
     {
@@ -68,8 +71,7 @@ export const centros = [
         telefono: '678 680 848',
         coords: [37.245007, -1.919679],
         photos: [
-            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-            'https://images.unsplash.com/photo-1542382257-80dedb725088?w=800&q=80'
+            imgAntas
         ]
     },
     {
@@ -92,8 +94,7 @@ export const centros = [
         telefono: '625 477 947',
         coords: [36.937861, -2.133880],
         photos: [
-            'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80',
-            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80'
+            imgCampohermoso
         ]
     },
     {
