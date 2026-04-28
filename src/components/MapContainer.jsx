@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -20,7 +20,7 @@ const createCustomIcon = (isActive) => {
 const defaultIcon = createCustomIcon(false);
 const activeIcon = createCustomIcon(true);
 
-function MapController({ coords, zoom, onReset }) {
+function MapController({ coords, zoom, onReset, defaultPosition, defaultZoom }) {
     const map = useMap();
 
     useEffect(() => {
@@ -38,7 +38,7 @@ function MapController({ coords, zoom, onReset }) {
         popupclose: () => {
             if (onReset) {
                 onReset();
-                map.flyTo([37.35, -1.95], 9.5, { duration: 1.2, easeLinearity: 0.25 });
+                map.flyTo(defaultPosition, defaultZoom, { duration: 1.2, easeLinearity: 0.25 });
             }
         }
     });
@@ -47,8 +47,16 @@ function MapController({ coords, zoom, onReset }) {
 }
 
 export default function CentrosMap({ centers, activeId, onMarkerClick, onOpenModal, onReset }) {
-    const defaultPosition = [37.35, -1.95];
-    const defaultZoom = 9.5;
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const defaultPosition = isMobile ? [37.5, -1.95] : [37.35, -1.95];
+    const defaultZoom = isMobile ? 8.2 : 9.5;
 
     const tileUrl = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
@@ -61,20 +69,22 @@ export default function CentrosMap({ centers, activeId, onMarkerClick, onOpenMod
                 style={{ height: '100%', width: '100%' }}
                 zoomSnap={0.5}
                 zoomDelta={0.5}
-                dragging={false}
+                dragging={true}
                 scrollWheelZoom={false}
-                touchZoom={false}
-                doubleClickZoom={false}
+                touchZoom={true}
+                doubleClickZoom={true}
                 boxZoom={false}
                 keyboard={false}
-                zoomControl={false}
+                zoomControl={true}
             >
                 <TileLayer attribution={attribution} url={tileUrl} />
 
                 <MapController
                     coords={activeId ? centers.find(c => c.id === activeId)?.coords : null}
-                    zoom={activeId ? 14 : 9.5}
+                    zoom={activeId ? 14 : defaultZoom}
                     onReset={onReset}
+                    defaultPosition={defaultPosition}
+                    defaultZoom={defaultZoom}
                 />
 
                 {centers.map((centro) => (
