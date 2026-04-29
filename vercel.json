@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.autoescuelasanjeronimo.es"
-        }
-      ],
-      "destination": "https://autoescuelasanjeronimo.es/$1",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!api|assets|sitemap.xml|robots.txt|favicon.png|og-image.png|_redirects|.*\\..*).*)",
