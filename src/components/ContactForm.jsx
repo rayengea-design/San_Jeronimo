@@ -31,12 +31,14 @@ export default function ContactForm({ compact = false }) {
 
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
-            <h3>{compact ? 'Solicita información' : 'Escríbenos'}</h3>
-            <p className="form-subtitle">
-                {compact
-                    ? 'Déjanos tus datos y te llamamos gratis.'
-                    : 'Te responderemos en menos de 24 horas.'}
-            </p>
+            {compact && (
+                <>
+                    <h3>Solicita información</h3>
+                    <p className="form-subtitle">
+                        Déjanos tus datos y te llamamos gratis.
+                    </p>
+                </>
+            )}
 
             <div className="form-row">
                 <div className="form-group">
