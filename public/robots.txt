@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.autoescuelasanjeronimo.es/sitemap.xml
+Sitemap: https://autoescuelasanjeronimo.es/sitemap.xml

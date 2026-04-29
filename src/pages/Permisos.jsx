@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { generateCourseSchema } from '../utils/seoSchemas';
+import { generateCourseSchema, generateFAQSchema, generateBreadcrumbSchema } from '../utils/seoSchemas';
 import Accordion from '../components/Accordion';
 import AnimatedSection from '../components/AnimatedSection';
 import busImage from '../assets/IMG_0948.jpg';
@@ -196,14 +196,21 @@ export default function Permisos() {
     return (
         <div className="permisos-page">
             <SEO
-                title="Permisos de conducir - Showroom Profesional"
-                description="Consigue tu carnet de coche, moto, camión o autobús con los mejores profesionales. Vehículos modernos y camión equipadoo único en la zona."
+                title="Permisos de Conducir B, A2, C, D, C+E | Autoescuela San Jerónimo"
+                description="Obtén tu carnet de coche, moto, camión o autobús. Vehículos modernos, pista de prácticas propia y profesores expertos. ¡Alta tasa de aprobados a la primera!"
                 url="https://autoescuelasanjeronimo.es/permisos"
-                schema={generateCourseSchema({
-                    name: 'Permisos de Conducir',
-                    description: 'Cursos para obtener permisos de conducir B, A2, C, D, etc.',
-                    url: 'https://autoescuelasanjeronimo.es/permisos'
-                })}
+                schema={[
+                    generateCourseSchema({
+                        name: 'Permisos de Conducir',
+                        description: 'Cursos para obtener permisos de conducir B, A2, C, D, etc.',
+                        url: 'https://autoescuelasanjeronimo.es/permisos'
+                    }),
+                    generateFAQSchema(faqs),
+                    generateBreadcrumbSchema([
+                        { name: 'Inicio', url: '/' },
+                        { name: 'Permisos', url: '/permisos' }
+                    ])
+                ]}
             />
 
             {/* HERO */}

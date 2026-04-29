@@ -107,8 +107,8 @@ export default function Home() {
     return (
         <div className="home-page">
             <SEO
-                title="Líderes en Formación Vial en Almería"
-                description="Autoescuela San Jerónimo: 40 años de excelencia. 11 centros en Almería, formación profesional CAP/ADR y permisos de conducir de todo tipo."
+                title="Autoescuela en Almería y Murcia | Coche, Moto y Camión"
+                description="Autoescuela San Jerónimo: Tu autoescuela de confianza con 11 sedes. Cursos CAP, ADR, recuperación de puntos y todos los permisos de conducir. ¡Aprueba a la primera!"
                 url="https://autoescuelasanjeronimo.es/"
                 schema={generateLocalBusinessSchema()}
             />
@@ -321,7 +321,7 @@ export default function Home() {
                                 </div>
                                 <div className="centros-mosaic__card">
                                     <strong>Sede Central</strong>
-                                    <span>Huércal-Overa · 629 245 426</span>
+                                    <span>Huércal-Overa · 629 245 406</span>
                                 </div>
                             </div>
                         </AnimatedSection>
@@ -374,7 +374,7 @@ export default function Home() {
             {/* ═══ CTA FINAL ═══ */}
             <section className="home-cta">
                 <div className="home-cta__bg">
-                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80" alt="" />
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80" alt="Alumno de Autoescuela San Jerónimo al volante de un coche de prácticas" />
                 </div>
                 <div className="container home-cta__inner">
                     <AnimatedSection animation="fade-up">

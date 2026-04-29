@@ -62,8 +62,8 @@ export default function Profesionales() {
     return (
         <div className="profesionales-page">
             <SEO
-                title="CAP y ADR Especialistas - Centro de Formación Profesional"
-                description="Expertos en formación CAP y ADR en Huércal-Overa. Consulta próximas fechas y gestiona la formación bonificada para tu empresa."
+                title="Cursos CAP y ADR en Almería | Formación de Transporte"
+                description="Centro oficial para cursos CAP (Inicial y Continuo) y mercancías peligrosas ADR en Almería. Formación bonificable por FUNDAE. ¡Plazas disponibles!"
                 url="https://autoescuelasanjeronimo.es/profesionales"
                 schema={generateCourseSchema({
                     name: 'Cursos CAP y ADR',
