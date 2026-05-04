@@ -6,6 +6,7 @@ import imgCampohermoso from '../assets/Campohermoso.jpeg';
 import imgOlula from '../assets/Olula.jpeg';
 import imgAlbox from '../assets/Albox.jpeg';
 import imgPuertoLumbreras from '../assets/Puerto-lumbreras.jpeg';
+import imgVelezRubio from '../assets/velez-rubio.jpeg';
 
 export const centros = [
     {
@@ -40,8 +41,7 @@ export const centros = [
         telefono: '678 680 847',
         coords: [37.648430, -2.080045],
         photos: [
-            'https://images.unsplash.com/photo-1460518451285-cd7b703cc66b?w=800&q=80',
-            'https://images.unsplash.com/photo-1517245366577-6bb933971206?w=800&q=80'
+            imgVelezRubio
         ]
     },
     {
