@@ -18,15 +18,32 @@ export default function ContactForm({ compact = false }) {
     const [form, setForm] = useState({
         nombre: '', telefono: '', email: '', centro: '', curso: '', mensaje: '',
     });
+    const [status, setStatus] = useState('idle'); // idle, submitting, success, error
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('¡Gracias! Nos pondremos en contacto contigo en menos de 24 horas.');
-        setForm({ nombre: '', telefono: '', email: '', centro: '', curso: '', mensaje: '' });
+        setStatus('submitting');
+
+        try {
+            const response = await fetch('https://formspree.io/f/xlgzjzly', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setForm({ nombre: '', telefono: '', email: '', centro: '', curso: '', mensaje: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
     };
 
     return (
@@ -102,10 +119,26 @@ export default function ContactForm({ compact = false }) {
             )}
 
             <div className="form-submit">
-                <button type="submit" className="btn btn-primary">
-                    {compact ? 'Solicitar información' : 'Enviar mensaje'}
+                <button 
+                    type="submit" 
+                    className="btn btn-primary" 
+                    disabled={status === 'submitting'}
+                >
+                    {status === 'submitting' ? 'Enviando...' : (compact ? 'Solicitar información' : 'Enviar mensaje')}
                 </button>
             </div>
+
+            {status === 'success' && (
+                <div className="form-success">
+                    ¡Gracias! Nos pondremos en contacto contigo en menos de 24 horas.
+                </div>
+            )}
+
+            {status === 'error' && (
+                <div className="form-error">
+                    Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o llámanos directamente.
+                </div>
+            )}
 
             <p className="form-note">
                 ¿Prefieres que te llamemos? Déjanos tu teléfono y te llamamos gratis.
